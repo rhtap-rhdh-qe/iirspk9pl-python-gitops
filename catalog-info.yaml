@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: iirspk9pl-python-gitops
+  description: This is GitOps manifest for iirspk9pl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=iirspk9pl-python
+    backstage.io/kubernetes-id: iirspk9pl-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: iirspk9pl-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:iirspk9pl-python
